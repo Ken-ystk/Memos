@@ -24,8 +24,10 @@ ul{
 
 span{
 	font-size : 115%;
+	/*
 	margin-top : 15pt;
 	margin-bottom: 15pt;
+	*/
 }
 
 ol{

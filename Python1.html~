@@ -5,7 +5,7 @@
 		<link rel="stylesheet" href="Python1.css">
 		<title>Python学習1</title>
 	</head>
-	<body bgcolor="#f0f8ff">
+	<body bgcolor="#f7feff">
 		<h1>Python学習1(基本操作)</h1>
 		<ol>
 			<li><h2>基本の基本</h2>
