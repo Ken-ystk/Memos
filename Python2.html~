@@ -1,0 +1,63 @@
+<DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="Python1.css">
+		<title>Python学習1</title>
+	</head>
+	<body bgcolor="#f7feff">
+		<h1>Python学習2(データ操作)</h1>
+		<ol>
+			<li><h2>List操作</h2>
+				<ul>
+					<li><span>要素の追加</span><br>
+						<b>list.append(x)</b>でlistにxを追加
+					</li>
+
+					<li><span>要素を数える</span><br>
+						<b>list.count(x)</b>でlistにxがいくつあるかを数える。
+					</li>
+
+					<li><span>リストの長さを数える</span><br>
+						<b>len(list)</b>でlistの長さを調べられる。
+					</li>
+
+					<li><span>要素を取り出す</span><br>
+						<b>list.pop(x)</b>でlistから値xの要素を取り出す。
+						指定しないと一番最後の要素を取り出す。
+					</li>
+
+					<li><span>要素を検索する</span><br>
+						<b>list.index(x)</b>とすれば、xがlistにあるときはインデックスが、ないときはNameErrorが返ってきて要素の検索ができる。<br>
+						Pythonでは<b>if x in list:</b>とすることで、要素xがあるかどうかで分岐ができる。
+					</li>
+
+					<li><span>リストの並びを逆順にする</span><br>
+						<b>list.reverse()</b>で、リストの並びを逆順にできる。
+					</li>
+
+					<li><span>要素をソートする</span><br>
+						<b>list.sort()</b>で昇順ソート、<b>list.sort(reverse=True)</b>で降順ソートができる。
+					</li>
+
+					<li><span>リストを空にする</span><br>
+						<b>list.clear()</b>でリストを空にできる。
+
+				</ul>
+
+				<li><h2>その他</h2>
+					<ul><span>エラーハンドリング</span><br>
+						<b>try-except</b>構文でエラーハンドリングができる。
+						<div class="pre">
+try:
+	...
+except "エラー名":
+	...
+						</div>
+					</ul>
+				</li>
+			</li>
+		</ol>
+	</body>
+</html>
+

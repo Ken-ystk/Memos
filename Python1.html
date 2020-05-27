@@ -1,0 +1,154 @@
+<DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="Python1.css">
+		<title>Python学習1</title>
+	</head>
+	<body bgcolor="#f7feff">
+		<h1>Python学習1(基本操作)</h1>
+		<ol>
+			<li><h2>基本の基本</h2>
+		<ul>
+			<li><span>文字列の表示</span><br>
+				<b>print(文字列)</b></li>
+
+			<li><span>コメントアウト</span><br>
+			1行なら#を前に置く。複数行なら...で囲む。
+			</li>
+
+			<li><span>変数宣言</span><br>
+				型名は書かない。
+			</li>
+		</ul></li>
+	
+	<li><h2>Pythonにおける配列</h2>
+		<ul>
+			<li><span>タプル</span><br>
+				<b>変数名 = (変数, 変数, 変数,...)</b>というように書く。<br>
+				なお、タプルは変数のセットを格納するための型の一つで、格納した変数のセットを<b>変更することはできない。</b><br>
+			配列と同じようにtuple[index]で要素にアクセス可能。</li>
+
+			<li><span>リスト</span><br>
+				<b>[変数, 変数, ...]</b>というように書く。<br>
+				リストも変数のセットを格納するための型の一つだが、格納した変数のセットを<b>変更可能。</b>
+				配列と同じようにlist[index]で要素にアクセス可能。</li>
+			</li>
+
+			<li><span>ディクショナリ</span><br>
+				<b>{"key": "value", ...}</b>というように書く。<br>
+				要素の取得は<b>dict["key"]</b>と書く。
+			</li>
+		</ul>
+
+		<li><h2>計算式</h2>
+		<ul>
+			<li><span>加減乗除について</span><br>
+				他の言語と同じだが、割り算の結果は暗黙の型変換への文句を気にしなくて良い(自動的に型が変わる)。
+			</li>
+
+			<li><span>累乗</span><br>
+				a^bは<b>a ** b</b>と書く。
+			</li>
+		</ul>
+
+		<li><h2>Pythonの構文</h2>
+		<ul>
+			<li><span>if文</span>
+			
+				<div class="pre" class="brush:ruby">
+if 条件式:
+	True時の処理
+	True時の処理
+elif 条件式2:
+	条件式がFalseかつ条件式2がTrueのときの処理
+	条件式がFalseかつ条件式2がTrueのときの処理
+else :
+	それ以外のときの処理
+	それ以外のときの処理
+
+if文の外の処理
+				</div>
+
+				と書く。
+				if文に限らず、中の処理はインデントをしっかり使って書く必要がある。
+			</li>
+
+			<li><span>for文</span>
+<div class="pre">
+for i in list:
+	listの各要素iに対する処理
+
+</div>
+			と書く。
+			</li>
+			
+			<li><span>while文</span>
+				<div class="pre">
+while(条件式):
+	条件式がTrueの間の処理
+
+</div>
+				と書く。
+			</li>
+		</ul>
+
+		<li><h2>Pythonにおける関数</h2>
+		<ul>
+			<li><span>関数の定義</span>
+<div class="pre">
+def 関数名(引数, 引数, ...):
+	関数の処理
+	return 戻り値
+
+</div>
+			と書く。
+			呼び出し方はCと同じ。
+			</li>
+		</ul>
+
+		<li><h2>Pythonにおけるクラス</h2>
+		<ul>
+			<li><span>クラスの定義</span>
+<div class="pre">
+class クラス名:
+	pass
+
+</div>
+			と書く。<br>
+			pass文は「何もしない」という処理の文であり、Pythonでは:の次の行はインデントされたブロックを記述する必要があるため書いた。
+			</li>
+
+			<li><span>コンストラクタとメンバ変数の定義</span>
+			<div class="pre">
+class ...
+
+	def __init__(self): #コンストラクタの定義
+		self.変数名 = 初期値
+
+...
+			</div>
+			と書く。
+			メンバ変数を定義するにはself(クラスの実体そのものを指す)を使う。
+			</li>
+
+			<li><span>インスタンスの生成</span><br>
+				<div class="pre">変数名 = クラス名()</div>と書く。
+			</li>
+
+			<li><span>メンバ関数の定義</span>
+<div class="pre">
+class ...
+
+	def __init__(self):
+		...
+	
+	def func(self, arg1, arg2, ...)
+		...
+...
+
+</div>と書く。第一引数は常にselfである。
+		</ul></li></ol>
+	</body>
+</html>
+

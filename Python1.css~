@@ -1,0 +1,57 @@
+*{
+	font-family:"monospace";
+}
+div.pre{
+	white-space:pre;
+	font-weight:bold;
+	background-color:white;
+	border: 1px solid;
+	padding-left : 10pt;
+	padding-right: 10pt;
+	margin-top : 5pt;
+	margin-bottom:5pt;
+}
+
+ul li{
+	margin-bottom : 20px;
+}
+
+ul{
+	list-style : disc;
+	margin-top : 5pt;
+	margin-bottom: 25pt;
+}
+
+span{
+	font-size : 115%;
+	margin-top : 15pt;
+	margin-bottom: 15pt;
+}
+
+ol{
+	counter-reset : lc;
+	list-style : none;
+}
+
+ol > li:before{
+	content:counter(lc) ".";
+	counter-increment: lc;
+	font-size:150%;
+	font-weight: bold;
+	margin-bottom : 0px;
+	padding-bottom : 0px;
+}
+
+h2{
+	display:inline-block;
+	padding:0px;
+	margin:0px;
+}
+
+/*
+h3{
+	display:inline-block;
+	padding:0px;
+	margin:0px;
+}
+*/
