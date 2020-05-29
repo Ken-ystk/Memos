@@ -4,8 +4,12 @@
 div.pre{
 	white-space:pre;
 	font-weight:bold;
+	line-height:150%;
 	background-color:white;
 	border: 1px solid;
+	font-family:monospace, monospace;
+	word-wrap : break-word;
+	font-feature-settings: "palt" 1;
 	padding-left : 10pt;
 	padding-right: 10pt;
 	margin-top : 5pt;

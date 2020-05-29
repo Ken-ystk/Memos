@@ -1,65 +1,220 @@
 <DOCTYPE html>
 <html lang="ja">
-	<head>
-		<meta charset="UTF-8">
-		<link rel="stylesheet" href="Python1.css">
-		<title>Python学習2</title>
-	</head>
-	<body bgcolor="#f7feff">
-		<h1>Python学習2(データ操作)</h1>
-		<ol>
-			<li><h2>List操作</h2>
-				<ul>
-					<li><span>要素の追加</span><br>
-						<b>list.append(x)</b>でlistにxを追加
-					</li>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Python1.css">
+    <title>Python学習2</title>
+  </head>
+  <body bgcolor="#f7feff">
+    <h1>Python学習2(データ操作)</h1>
+    <ol>
+      <li><h2>List操作</h2>
+	<ul>
+	  <li><span>要素の追加</span><br>
+	    <b>list.append(x)</b>でlistにxを追加
+	  </li>
 
-					<li><span>要素を数える</span><br>
-						<b>list.count(x)</b>でlistにxがいくつあるかを数える。
-					</li>
+	  <li><span>要素を数える</span><br>
+	    <b>list.count(x)</b>でlistにxがいくつあるかを数える。
+	  </li>
+	  <li><span>リストの長さを数える</span><br>
+	    <b>len(list)</b>でlistの長さを調べられる。
+	  </li>
 
-					<li><span>リストの長さを数える</span><br>
-						<b>len(list)</b>でlistの長さを調べられる。
-					</li>
+	 <li><span>要素の総和を求める</span><br>
+	   <b>sum(list)</b>でlistの要素の総和を返す。
+	 </li>
+	  <li><span>要素を取り出す</span><br>
+	    <b>list.pop(x)</b>でlistから値xの要素を取り出す。
+	    指定しないと一番最後の要素を取り出す。
+	  </li>
 
-					<li><span>要素を取り出す</span><br>
-						<b>list.pop(x)</b>でlistから値xの要素を取り出す。
-						指定しないと一番最後の要素を取り出す。
-					</li>
+	  <li><span>要素を検索する</span><br>
+	    <b>list.index(x)</b>とすれば、xがlistにあるときはインデックスが、ないときはNameErrorが返ってきて要素の検索ができる。<br>
+	    Pythonでは<b>if x in list:</b>とすることで、要素xがあるかどうかで分岐ができる。
+	  </li>
 
-					<li><span>要素を検索する</span><br>
-						<b>list.index(x)</b>とすれば、xがlistにあるときはインデックスが、ないときはNameErrorが返ってきて要素の検索ができる。<br>
-						Pythonでは<b>if x in list:</b>とすることで、要素xがあるかどうかで分岐ができる。
-					</li>
+	  <li><span>リストの並びを逆順にする</span><br>
+	    <b>list.reverse()</b>で、リストの並びを逆順にできる。
+	  </li>
 
-					<li><span>リストの並びを逆順にする</span><br>
-						<b>list.reverse()</b>で、リストの並びを逆順にできる。
-					</li>
+	  <li><span>要素をソートする</span><br>
+	    <b>list.sort()</b>で昇順ソート、<b>list.sort(reverse=True)</b>で降順ソートができる。
+	  </li>
 
-					<li><span>要素をソートする</span><br>
-						<b>list.sort()</b>で昇順ソート、<b>list.sort(reverse=True)</b>で降順ソートができる。
-					</li>
+	  <li><span>リストを空にする</span><br>
+	    <b>list.clear()</b>でリストを空にできる。
 
-					<li><span>リストを空にする</span><br>
-						<b>list.clear()</b>でリストを空にできる。
+	</ul>
 
-				</ul>
+	<li><h2>スライス操作</h2>
+	  <ul>
+	    <li><span>スライスの概念</span><br>
+	      例えば[a, b, c, d, e, f]というリストだったら次のようにスライスが設定されている。<br>
+<div class="pre">
+-6  -5  -4  -3  -2  -1   0
+ | a | b | c | d | e | f |
+ 0   1   2   3   4   5   6
 
-				<li><h2>その他</h2>
-					<ul><span>エラーハンドリング</span><br>
-						<b>try-except</b>構文でエラーハンドリングができる。
-						<div class="pre">
+</div>
+	      0は:の左に書けば先頭、右に書けば末尾のモノを指す。
+
+	    </li>
+	    <li><span>要素のn番目までを取得</span><br>
+	      <b>list[:n]</b>と書く。list[0:n]の略記。
+	    </li>
+
+	    <li><span>要素のn番目以降を取得</span><br>
+	      <b>list[n:]</b>と書く。list[n:0]の略記。
+	    </li>
+
+	    <li><span>要素のn番目からm番目を取得</span><br>
+	      <b>list[n:m]</b>と書く。
+	    </li>
+
+	    <li><span>要素の最後からn番目までを取得</span><br>
+	      <b>list[:-n]</b>と書く。list[0:-n]の略記。
+	      list[0:0]はリストの全体を指す。
+	    </li>
+
+	    <li><span>要素のn個の要素を取得</span><br>
+	      <b>list[-n:]</b>と書く。list[-n:0]の略記。
+	    </li>
+
+	    <li><span>要素をn個毎に取得</span><br>
+	      <b>list[::n]</b>と書く。<br>
+	      これは<b>list[0:0:n]</b>で、list[0:0](つまりlist全体)をn個毎に取得するという意味。
+	    </li>
+
+	    <li><span>要素を逆順に並べ替える</span><br>
+	      <b>list[::-1]</b>と書く。
+	    </li>
+	  </ul>
+
+	  <li><h2>ディレクトリの操作</h2>
+	    <ul>
+	      <li><span>要素を追加する</span>
+		<b>profile["key"]=value</b>と書く。
+	      </li>
+
+	      <li><span>値を取得する</span>
+		<b>profile["key"]</b>と書く。
+		存在しないキーを指定すると<b>keyError</b>という例外を吐く。
+	      </li>
+
+	      <li><span>keyの一覧を取得する</span>
+		<b>profile.keys()</b>と書く。
+	      </li>
+
+	      <li><span>値の一覧を取得する</span>
+		<b>profile.values()</b>と書く。
+	      </li>
+
+	      <li><span>for文で辞書を扱う</span>
+		<div class="pre">
+for k, v in profile.items():
+	...
+
+</div>
+		と書く。
+		キーだけ利用したい、値だけ利用したい場合はそれぞれ上述のkeys(), values()を使う。
+	      </li>
+	    </ul>
+	  </li>
+
+	  <li><h2>内包表記</h2>
+	    <ul>
+	      <li><span>内包表記の定義</span><br>
+		<div class="pre">
+(変数xの式) for (変数x) in (要素の集合) if (条件式)
+
+</div>
+
+		条件式は省略可能(下記は例)
+		<div class="pre">
+list = [1, 2, 3, 4, 5]
+double = [x * 2 for x in list]
+print(double)
+
+#出力は[2, 4, 6, 8, 10]
+
+</div>
+	      </li>
+
+	      <li><span>内包表記と三項演算子</span><br>
+		上述の定義で書いた(変数xの式)を三項演算子の式にすることで条件分岐ができる（上の定義でいうlistの後のifにはelse句を書けないため）。
+<div class="pre">
+#listの奇数を-2倍、偶数を2倍
+#内包表記自体のif節
+mdouble_odd = [x * -2 for x in list if x % 2 == 1]
+double_even = [x *  2 for x in list if x % 2 == 0]
+
+#三項演算子のif節
+mdb-odd_db-even = [x * -2 if x % 2 == 1 else x * 2 for x in list]
+
+</div>
+		</li>
+
+		<li><span>辞書型と内包表記</span>
+		  for以降が<b>for k, v in list.items()</b>等に変更されるだけ。三項演算子も使える。
+		</li>
+	    </ul>
+
+	    <li><h2>lambda式</h2>
+	      <ul>
+		<li><span>lambda式</span><br>
+		 無名関数のこと。<b>lambda x1, x2, ..., xn : (x1, x2, ..., xnの式)</b>のように書く。引数はリストもOK。
+<div class="pre">
+f = lambda x : x * 2
+#f(3)=6
+
+g = lambda x, y : x + y
+#f(1,2)=3
+
+h = lambda x : x[0]
+#h([1,2,3])=1
+</div>
+		</li>
+
+		<li><span>無名関数の利点</span><br>
+		  一度しか使わない関数に名前を付けなくてよい。関数の引数に直接渡せる。<br>
+		  一度しか使わない関数の例:関数の引数である関数、再帰先の関数など
+
+	      </ul>
+	  </li>
+
+	      <li><h2>その他</h2>
+		<ul><li><span>エラーハンドリング</span><br>
+		    <b>try-except</b>構文でエラーハンドリングができる。
+		    <div class="pre">
 try:
-	...
+      ...
 except "エラー名":
-	...
-						</div>
-					</ul>
-				</li>
-			</li>
-		</ol>
+      ...
+		    </div>
+		  </li>
+		  <li><span>str関数</span><br>
+		    引数を文字列に変換する。例えば<b>str(i + "人兄弟")</b>でi=3なら3人兄弟という文字列に変換してくれる。
+		  </li>
 
-		<a href="./Python1.html">前のページに戻る</a>
-	</body>
+		  <li><span>ファイルを開く</span><br>
+<div class="pre">
+with open('file名', 'モード') as file:
+	...
+	#モード:r -> 読み取り専用, w -> 書き込み専用, r+ →> 読み書き両用, a -> 既存ファイルの編集
+</div>
+		と書く。
+			<b>file.readlines()</b>でファイルを一行ごとに全て読み込む。
+		 </li>
+
+		 <li><span>strip関数とsplit関数</span><br>
+		   <b>x.strip()</b>はxから改行文字を削除、<b>x.split("区切り")</b>は区切り文字でxを区切る。
+		 </li>
+		</ul>
+	      </li>
+    </ol>
+
+    <a href="./Python1.html">前のページに戻る</a>
+  </body>
 </html>
 
